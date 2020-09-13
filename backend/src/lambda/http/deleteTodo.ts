@@ -11,7 +11,6 @@ export const handler: middy.Middy<APIGatewayProxyEvent, APIGatewayProxyResult> =
 
   await deleteTodo(todoId, userId);
 
-  // TODO: Remove a TODO item by id
   return { statusCode: 204, body: "" }
 })
 

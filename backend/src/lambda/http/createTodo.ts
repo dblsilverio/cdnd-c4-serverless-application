@@ -15,7 +15,6 @@ export const handler: middy.Middy<APIGatewayProxyEvent, APIGatewayProxyResult> =
   const item: TodoItem = await createTodo(newTodo, userId);
   item.userId = userId;
 
-  // TODO: Implement creating a new TODO item
   return {
     statusCode: 201,
     body: JSON.stringify({ item })

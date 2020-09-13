@@ -14,7 +14,6 @@ export const handler: middy.Middy<APIGatewayProxyEvent, APIGatewayProxyResult> =
 
   await updateTodo(todoId, updatedTodo, userId);
 
-  // TODO: Update a TODO item with the provided id using values in the "updatedTodo" object
   return { statusCode: 204, body: "" }
 })
 
