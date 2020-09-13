@@ -1,9 +1,10 @@
-import * as AWS from 'aws-sdk';
-
 import { TodoData } from '../todoData';
 import { TodoItem } from '../../models/TodoItem';
 import { TodoUpdate } from '../../models/TodoUpdate';
 import { QueryOutput, GetItemOutput, DocumentClient } from 'aws-sdk/clients/dynamodb';
+
+const AWSXRay = require('aws-xray-sdk-core');
+const AWS = AWSXRay.captureAWS(require('aws-sdk'));
 
 export class DynamoTodos implements TodoData {
 
@@ -114,6 +115,6 @@ function createDynamoDBClient() {
             endpoint: 'http://localhost:8000'
         }
     }
-
+   
     return new AWS.DynamoDB.DocumentClient(params)
 }
