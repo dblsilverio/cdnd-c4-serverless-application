@@ -1,3 +1,3 @@
 export interface ImageData {
-    signedUrl(todoId: string, userId: string): string
+    signedUrl(todoId: string): string
 }

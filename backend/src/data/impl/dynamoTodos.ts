@@ -64,6 +64,23 @@ export class DynamoTodos implements TodoData {
 
     }
 
+    async updateTodoAttachment(todoId: string, attachmentUrl: string, userId: string): Promise<void> {
+
+        if (!this.checkTodoOwner(userId, todoId)) {
+            throw Error(`Unauthorized operation`)
+        }
+
+        await this.docClient.update({
+            TableName: this.table,
+            Key: { userId, todoId },
+            UpdateExpression: "set attachmentUrl = :url",
+            ExpressionAttributeValues: {
+                ':url': attachmentUrl
+            }
+        }).promise()
+
+    }
+
     async deleteTodo(todoId: string, userId: string): Promise<void> {
 
         if (!this.checkTodoOwner(userId, todoId)) {

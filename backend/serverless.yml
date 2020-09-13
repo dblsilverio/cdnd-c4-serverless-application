@@ -21,7 +21,7 @@ provider:
 
   environment:
     BUCKET_NAME: udacity-cdnd-diogo-todoapp-${self:provider.stage}
-    SINGNED_URL_EXPIRATION: 180
+    SIGNED_URL_EXPIRATION: 180
     TODOS_INDEX_NAME: todos_by_user
     TODOS_TABLE: todos 
 
@@ -153,6 +153,16 @@ functions:
           path: todos/{todoId}/attachment
           cors: true
           authorizer: Auth
+    iamRoleStatements:
+      - Effect: Allow
+        Action:
+          - s3:PutObject
+        Resource: arn:aws:s3:::${self:provider.environment.BUCKET_NAME}/*
+      - Effect: Allow
+        Action:
+          - dynamodb:GetItem
+          - dynamodb:UpdateItem
+        Resource: arn:aws:dynamodb:${self:provider.region}:*:table/${self:provider.environment.TODOS_TABLE}
 
 resources:
   Resources:
