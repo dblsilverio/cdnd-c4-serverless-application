@@ -6,6 +6,7 @@
     "start": "sls offline -s dev"
   },
   "dependencies": {
+    "@middy/core": "^1.4.0",
     "@types/axios": "^0.14.0",
     "@types/http-errors": "^1.6.1",
     "aws-xray-sdk": "^2.2.0",
@@ -18,7 +19,7 @@
     "winston": "^3.2.1"
   },
   "devDependencies": {
-    "@types/aws-lambda": "^8.10.17",
+    "@types/aws-lambda": "^8.10.62",
     "@types/jsonwebtoken": "^8.3.2",
     "@types/node": "^10.14.4",
     "aws-sdk": "^2.433.0",
