@@ -6,22 +6,22 @@
     "start": "sls offline -s dev"
   },
   "dependencies": {
-    "@middy/core": "^1.4.0",
-    "@types/axios": "^0.14.0",
-    "@types/http-errors": "^1.6.1",
     "aws-xray-sdk": "^3.2.0",
-    "axios": "^0.19.0",
-    "http-errors": "^1.7.2",
+    "axios": "^0.20.0",
+    "http-errors": "^1.8.0",
     "jsonwebtoken": "^8.5.1",
-    "middy": "^0.27.0",
-    "source-map-support": "^0.5.11",
-    "uuid": "^3.3.2",
-    "winston": "^3.2.1"
+    "middy": "^0.36.0",
+    "source-map-support": "^0.5.19",
+    "uuid": "^8.3.0",
+    "winston": "^3.3.3"
   },
   "devDependencies": {
+    "@middy/core": "^1.4.0",
+    "@types/axios": "^0.14.0",
+    "@types/http-errors": "^1.8.0",
     "@types/aws-lambda": "^8.10.62",
     "@types/jsonwebtoken": "^8.3.2",
-    "@types/node": "^10.14.4",
+    "@types/node": "^10.17.34",
     "aws-sdk": "^2.751.0",
     "serverless-aws-documentation": "^1.1.0",
     "serverless-dynamodb-local": "^0.2.39",
