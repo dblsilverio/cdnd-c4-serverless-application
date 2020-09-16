@@ -11,7 +11,7 @@ const todoData: TodoData = new DynamoTodos()
 export function signedUrl(todoId: string, userId: string): String {
     const signedImageUrl: string = imagesData.signedUrl(todoId);
 
-    if(signedImageUrl) {
+    if (signedImageUrl) {
         todoData.updateTodoAttachment(todoId, attachmentUrl(todoId), userId)
     }
 

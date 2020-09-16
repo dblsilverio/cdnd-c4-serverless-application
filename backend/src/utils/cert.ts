@@ -11,8 +11,8 @@ export async function getPublicKey(jwksUrl: string, jwt: Jwt): Promise<string> {
     logger.info(`Retrieved ${keys.length} key(s)`)
 
     const signingKey = keys.find(k => k.kid === jwt.header.kid);
-    
-    if(!signingKey) {
+
+    if (!signingKey) {
         logger.warning(`Signing key not found for kid '${jwt.header.kid}'`)
     }
 
